@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batch 0 - 99</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="data0.js"></script>
+    <script>
+      MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn">< BACK TO MENU</a>
+        
+        <header class="header">
+            <div class="title-section">
+                <h1>BATCH_INDEX_0</h1>
+                <div class="subtitle">RECORDS: 000 - 099</div>
+            </div>
+        </header>
+
+        <div class="functions-grid" id="function-container">
+            <!-- Data loaded here -->
+        </div>
+    </div>
+
+    <div id="toast">DATA COPIED TO CLIPBOARD</div>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			const container = document.getElementById('function-container');
+			
+			if (typeof functionData === 'undefined' || functionData.length === 0) {
+				container.innerHTML = '<p>NO DATA FOUND IN CURRENT BATCH.</p>';
+				return;
+			}
+
+			functionData.forEach(item => {
+				const card = document.createElement('div');
+				card.className = 'function-card';
+				
+				let linkHTML = item.link ? `<a href="${item.link}" target="_blank" class="link-btn">[LINK]</a>` : '';
+
+				// Menambahkan div class="function-id" untuk menampilkan ID
+				card.innerHTML = `
+					<div class="function-id">[ FUNC_ID: ${item.id} ]</div>
+					<div class="math-display">\\[ ${item.latex} \\]</div>
+					<div class="actions">
+						<button onclick="copyText(this, \`${item.latex}\`)">[COPY LATEX CODE]</button>
+						<button onclick="copyText(this, \`${item.js.replace(/\\/g, '\\\\').replace(/"/g, '&quot;')}\`)">[COPY JAVASCRIPT]</button>
+						${linkHTML}
+					</div>
+				`;
+				container.appendChild(card);
+			});
+
+			if (window.MathJax) MathJax.typesetPromise();
+		});
+
+		function copyText(btn, text) {
+			navigator.clipboard.writeText(text).then(() => {
+				const toast = document.getElementById("toast");
+				toast.className = "show";
+				setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
+			});
+		}
+	</script>
+</body>
+</html>
