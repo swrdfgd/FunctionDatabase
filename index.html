@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Database</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="title-section">
+                <h1>FUNCTION DATABASE</h1>
+                <div class="subtitle">MATHEMATICAL FUNCTION REPOSITORY</div>
+            </div>
+            <div class="status-box">
+                STATUS: ONLINE &nbsp;|&nbsp; SYSTEM: READY
+            </div>
+        </header>
+
+        <!-- Bagian Fungsi Utama -->
+        <h2 class="section-title">SELECT DATA RANGE</h2>
+        <div class="menu-grid" id="menu-container">
+            <!-- JavaScript will populate ranges here -->
+        </div>
+
+        <!-- Spasi pemisah tanpa garis -->
+        <div style="margin-top: 60px;"></div>
+
+        <!-- Bagian Fungsi Substitusi -->
+
+        <div class="menu-grid" id="menu-container-sub">
+            <!-- JavaScript will populate substituted ranges here -->
+        </div>
+		
+		<div style="margin-top: 60px;"></div>
+        <!-- Bagian Fungsi F -->
+
+        <div class="menu-grid" id="menu-container-f">
+		 </div>
+				
+		<div style="margin-top: 60px;"></div>
+        <!-- Bagian Fungsi F Sub-->
+
+        <div class="menu-grid" id="menu-container-f-sub">
+           
+        </div>
+    </div>
+
+    <script>
+        const TOTAL_PAGES = 5; 
+        
+        const container = document.getElementById('menu-container');
+        const containerSub = document.getElementById('menu-container-sub');
+		const containerF = document.getElementById('menu-container-f');
+		const containerFSub = document.getElementById('menu-container-f-sub');
+        
+        for (let i = 0; i < TOTAL_PAGES; i++) {
+            const startId = i * 100;
+            const endId = startId + 99;
+            
+            // Kartu untuk fungsi utama (0.html, 1.html, dst)
+            const card = document.createElement('a');
+            card.href = `${i}.html`;
+            card.className = 'menu-card';
+            card.innerHTML = `
+                <div class="batch-index">[ BATCH_INDEX_${i} ]</div>
+                <div class="batch-range">${startId} - ${endId}</div>
+            `;
+            container.appendChild(card);
+
+            // Kartu untuk fungsi substitusi (0-0.html, 1-0.html, dst)
+            const subCard = document.createElement('a');
+            subCard.href = `${i}-0.html`;
+            subCard.className = 'menu-card';
+            subCard.innerHTML = `
+                <div class="batch-index">[ BATCH_INDEX_${i}-0 ]</div>
+                <div class="batch-range">${startId}.00 - ${endId}.x0</div>
+            `;
+            containerSub.appendChild(subCard);
+			
+			 // Kartu untuk fungsi f (f0.html, f1.html, dst)
+            const fCard = document.createElement('a');
+            fCard.href = `f${i}.html`;
+            fCard.className = 'menu-card';
+            fCard.innerHTML = `
+                <div class="batch-index">[ BATCH_INDEX_f${i}]</div>
+                <div class="batch-range">f${startId} - f${endId}</div>
+            `;
+            containerF.appendChild(fCard);
+			
+			// Kartu untuk fungsi fSub (f0-0.html, f1-0.html, dst)
+            const fSubCard = document.createElement('a');
+            fSubCard.href = `f${i}-0.html`;
+            fSubCard.className = 'menu-card';
+            fSubCard.innerHTML = `
+                <div class="batch-index">[ BATCH_INDEX_f${i}]</div>
+                <div class="batch-range">f${startId}.00 - f${endId}.x0</div>
+            `;
+            containerFSub.appendChild(fSubCard);
+        }
+    </script>
+</body>
+</html>
