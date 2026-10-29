@@ -216,9 +216,9 @@ const functionData = [
     "link": ""
   },
   {
-    "id": 37,
-    "latex": "e^y - \\ln \\left( e^y - \\ln x \\right)",
-    "js": "function f(x, y) {\n  return Math.exp(y) - Math.log(Math.exp(y)-Math.log(x));\n}",
+    "id": "37.x0",
+    "latex": "1 - \\ln \\left( 1 - \\ln x \\right)",
+    "js": "function f(x, y) {\n  return 1 - Math.log(1-Math.log(x));\n}",
     "link": ""
   },
   {
