@@ -42,6 +42,12 @@ const functionData = [
     "link": ""
   },
   {
+    "id": 210,
+    "latex": "e^y - e^x",
+    "js": "function f(x, y) {\n  return Math.exp(y) - Math.exp(x);\n}",
+    "link": ""
+  },
+  {
     "id": 212,
     "latex": "e^y - \\ln \\left( e^{e^x} - \\ln y \\right)",
     "js": "function f(x, y) {\n  return Math.exp(y)-Math.log(Math.exp(Math.exp(x))-Math.log(y));\n}",
