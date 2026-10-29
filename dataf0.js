@@ -180,9 +180,9 @@ const functionData = [
     "link": ""
   },
   {
-    "id": 29,
-    "latex": "e^x - \\ln \\left( e^y - \\ln y \\right)",
-    "js": "function f(x, y) {\n  return Math.exp(x) - Math.log(Math.exp(y) - Math.log(y));\n}",
+    "id": "f29",
+    "latex": "\\ln \\left( \\ln \\left(e^y - \\ln y \\right) \\right)",
+    "js": "function f(x, y) {\n  return Math.log(Math.log(Math.exp(y)-Math.log(y)));\n}",
     "link": ""
   },
   {
