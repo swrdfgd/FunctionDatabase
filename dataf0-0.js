@@ -294,9 +294,9 @@ const functionData = [
     "link": ""
   },
   {
-    "id": 58,
-    "latex": "e^{e^y} - \\ln x",
-    "js": "function f(x, y) {\n  return Math.exp(Math.exp(y))-Math.log(x);\n}",
+    "id": "f58.x0",
+    "latex": "e^e",
+    "js": "function f(x, y) {\n  return Math.exp(Math.E);\n}",
     "link": ""
   },
   {
