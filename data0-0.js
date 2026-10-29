@@ -408,9 +408,9 @@ const functionData = [
     "link": ""
   },
   {
-    "id": 81,
-    "latex": "e - \\ln \\left( e^x - y \\right)",
-    "js": "function f(x, y) {\n  return Math.E - Math.log(Math.exp(x) - y);\n}",
+    "id": "81.0y",
+    "latex": "e - \\ln \\left( 1 - y \\right)",
+    "js": "function f(x, y) {\n  return Math.E - Math.log(1 - y);\n}",
     "link": ""
   },
   {
