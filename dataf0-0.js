@@ -192,9 +192,15 @@ const functionData = [
     "link": ""
   },
   {
-    "id": 34,
-    "latex": "e^y - \\ln \\left( e^x - \\ln x \\right)",
-    "js": "function f(x, y) {\n  return Math.exp(y) - Math.log(Math.exp(x) - Math.log(x));\n}",
+    "id": "f34.x0.1",
+    "latex": bisectionMethod("function func(x) {return Math.exp(x) - Math.log(x) - Math.E;}", 0, 0.5) + '...',
+    "jsbis": "function f(x, y) {\n  return y - bisectionMethod('function func(x) {return Math.exp(x) - Math.log(x) - Math.E;}', 0, 0.5);}",
+    "link": ""
+  },
+  {
+    "id": "f34.x0.2",
+    "latex": "1",
+    "js": "function f(x, y) {\n  return 1;\n}",
     "link": ""
   },
   {
