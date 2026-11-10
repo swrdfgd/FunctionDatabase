@@ -258,12 +258,6 @@ const functionData = [
     "link": ""
   },
   {
-    "id": 45,
-    "latex": "\\frac{e^e}{y}",
-    "js": "function f(x, y) {\n  return Math.exp(Math.E)/y;\n}",
-    "link": ""
-  },
-  {
     "id": 47,
     "latex": "\\frac{e^e}{y} - \\ln y",
     "js": "function f(x, y) {\n  return Math.exp(Math.E)/y - Math.log(y);\n}",
@@ -321,12 +315,6 @@ const functionData = [
     "id": "61.x0",
     "latex": "\\frac{e}{x}- \\ln x",
     "js": "function f(x, y) {\n  return Math.E/x - Math.log(x);\n}",
-    "link": ""
-  },
-  {
-    "id": 62,
-    "latex": "\\frac{e^{e^y}}{x}- \\ln y",
-    "js": "function f(x, y) {\n  return Math.exp(Math.exp(y))/x - Math.log(y);\n}",
     "link": ""
   },
   {
