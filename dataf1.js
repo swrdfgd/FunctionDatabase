@@ -90,9 +90,9 @@ const functionData = [
     "link": ""
   },
   {
-    "id": 115,
-    "latex": "e - \\ln \\left( \\frac{e^{e^y}}{x} - \\ln x \\right)",
-    "js": "function f(x, y) {\n  return Math.E - Math.log(Math.exp(Math.exp(y))/x-Math.log(x));\n}",
+    "id": "f115",
+    "latex": "\\ln \\left(\\ln \\left(e^e + \\ln x\\right) + \\ln x \\right)",
+    "js": "function f(x, y) {\n  return Math.log(Math.log(Math.exp(Math.E)+Math.log(x))+Math.log(x))",
     "link": ""
   },
   {
